@@ -1,0 +1,34 @@
+<div class="container" ng-controller="contentController">
+    <div class="pos bg-primary" style="top:0;z-index:8;">
+        <nav class="nav-list">
+            <ul>
+                <li ng-repeat="heard in data.heard"><a href="">{{heard}}</a></li>
+            </ul>
+        </nav>
+    </div>
+
+    <div class="row">
+        <div class="col-md-12 m-t50 none-p">
+            <img ng-src="{{data.banner}}" width="100%" alt=""/>
+        </div>
+    </div>
+    <div class="row m-b50 m-t20">
+        <div class="media" ng-repeat="list in data.listData">
+            <a class="pull-left" href="#list" ng-click="details($index)">
+                <img ng-src="{{list.img}}"  width="100%" alt=""/>
+            </a>
+            <div class="media-body">
+                <h4 class="media-heading">{{list.title}}</h4>
+                {{list.con | textEllipsis}}
+            </div>
+        </div>
+    </div>
+
+    <div class="pos" style="bottom:0;">
+        <footer class="nav-list">
+            <ul>
+                <li ng-repeat="foot in data.footersNav">{{foot}}</li>
+            </ul>
+        </footer>
+    </div>
+</div>

@@ -1,0 +1,38 @@
+/**
+ * Created by swan on 15/9/22.
+ */
+var app = angular.module('myApp',[
+    'ui.router',
+    'app.filter'
+]);
+app.config(function($stateProvider,$urlRouterProvider){
+    $urlRouterProvider.when('','/index');
+    $stateProvider
+        .state('index',{
+            url:'/index',
+            views:{
+                '':{
+                    controller:'loginController',
+                    templateUrl:'tpl/login.html'
+                }
+            }
+        })
+        .state('content',{
+            url:'/content',
+            views:{
+                '':{
+                    controller:'contentController',
+                    templateUrl:'tpl/content.html'
+                }
+            }
+        })
+        .state('list',{
+            url:'/list',
+            views:{
+                '':{
+                    controller:'contentController',
+                    templateUrl:'tpl/list.html'
+                }
+            }
+        })
+});

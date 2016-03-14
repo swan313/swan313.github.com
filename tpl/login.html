@@ -1,0 +1,25 @@
+<div class="container" style="padding-top:50px;" ng-controller="loginController">
+    <div class="row m-b50">
+        <img src="img/login.jpg" width="100%" alt=""/>
+    </div>
+    <form class="form-horizontal">
+        <div class="form-group">
+            <label for="inputEmail3" class="col-sm-2 control-label">Username</label>
+            <div class="col-sm-6">
+                <input type="text" class="form-control" id="inputEmail3" placeholder="Username" ng-model="username">
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="inputPassword3" class="col-sm-2 control-label">Password</label>
+            <div class="col-sm-6">
+                <input type="password" class="form-control" id="inputPassword3" placeholder="Password">
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-sm-offset-2 col-sm-6 text-center m-t20">
+                <a class="btn gray {{isActive}}" ng-href="#{{jump}}" ng-click="login()">登录</a>
+            </div>
+        </div>
+    </form>
+</div>
