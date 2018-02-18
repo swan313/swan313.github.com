@@ -150,7 +150,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/components/add-question/add-question.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"card\">\n  <div class=\"card-header\">\n    添加问题\n  </div>\n  <div class=\"card-block\">\n    <form>\n      <div class=\"form-group\">\n        问题\n        <input type=\"text\" class=\"form-control\" [(ngModel)]=\"text\" name=\"text\">\n      </div>\n      <div class=\"form-group\">\n        答案\n        <input type=\"text\" class=\"form-control\" [(ngModel)]=\"answer\" name=\"answer\">\n      </div>\n      <input type=\"button\" value=\"提交\" class=\"btn btn-info\" (click)=\"addQuestion()\">\n    </form>\n  </div>\n</div>\n"
+module.exports = "<div class=\"card\">\n  <div class=\"card-header\">\n    添加问题\n  </div>\n  <div class=\"card-block\">\n    <form (submit)=\"addQuestion()\">\n      <div class=\"form-group\">\n        问题\n        <input type=\"text\" class=\"form-control\" [(ngModel)]=\"text\" name=\"text\">\n      </div>\n      <div class=\"form-group\">\n        答案\n        <input type=\"text\" class=\"form-control\" [(ngModel)]=\"answer\" name=\"answer\">\n      </div>\n      <input type=\"submit\" value=\"提交\" class=\"btn btn-info\">\n    </form>\n  </div>\n</div>\n"
 
 /***/ }),
 
@@ -180,6 +180,8 @@ var AddQuestionComponent = /** @class */ (function () {
     AddQuestionComponent.prototype.addQuestion = function () {
         console.log(this.text);
         this.questionAdded.emit({ text: this.text, answer: this.answer, hide: true });
+        this.text = '';
+        this.answer = '';
     };
     __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["K" /* Output */])(),
